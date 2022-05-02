@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Beaver Populations and Flood Resilience</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.2/css/bootstrap-toggle.css"> -->
+
+    <!-- ArcGIS JS API -->
+    <link rel="stylesheet" href="https://js.arcgis.com/4.23/esri/themes/light/main.css"/>
+
+    <link rel="stylesheet" href="css/bootstrapStyles.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="page-top">
+
+    <div class="container-fluid">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="index.html"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#page-top"> Home </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#benefits"> Why Beavers </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#firstMap"> Wetland Map </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#viewDiv"> Catchment Map </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#dashboard"> Dashboard </a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+      </div>    
+
+      <section class="masthead">
+        <div class="container d-flex h-70 align-items-center">
+            <div class="mx-auto text-center">
+                <h1 class="mx-auto my-0 text-uppercase">Beaver Populations and Flood Resilience</h1>
+                <h6 class="text-white mb-4 text-uppercase">in the Western Lake Superior Watershed</h6>
+            </div>
+        </div>
+      </section>
+
+      <section class="about-section text-center" id="about">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <p class="text-white-50 mb-4" id="desc">
+                As the climate warms and changes due to the ever-increasing amount of greenhouse gases in the atmosphere, the Upper Midwest has seen an increase in storm cells which release large amounts of precipitation over localized areas in a short amount of time, at times causing extensive flood damage.<br><br><br>
+                Prior to European settlement, the landscape of the Northwoods was dominated by beaver colonies along streams, their dams creating a network of braided rivulets which would spread rainfall across floodplains and into numerous wetland ponds. As humans have altered the landscape for agriculture and development, the tendency has been to funnel excess water into drainage ditches and swiftly flush it downstream. With the streams largely undammed, the volume of water passing downstream can swiftly grow out of control in a rainstorm event.<br><br><br>Ashland, WI saw one such storm on July 11, 2016, when around 10 inches of rain fell in 8 hours, effectively turning the Bad River into a firehose which completely washed out a section of US Hwy 2 in the Bad River tribal reservation:<br><br>
+                <img src="img/hwy2flood.jpg" width="100%" height="100%" margin="auto" alt=""> <br><br>
+                
+                Damage costs to infrastructure from flooding have been enormous recently, and are only expected to increase as "100-year" flood events occur more frequently. So how can we build more resiliency and stability into the landscape? <br><br><img src="img/introdam.jpg" width="100%" margin="auto" alt=""> <br><br><br> Beavers are keystone species in that they help define and build entire wetland ecosystems, thereby triggering trophic cascades of productivity and species richness. Beavers as ecosystem engineers create wetlands that support biodiversity and restore the hydrology of rivers, improving water quality and stabilizing watersheds.
+                Because they are so impactful, beavers are not always welcomed by landowners, but the presence of beaver dams offers significant benefits:
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Beaver Benefits -->
+      <section class="projects-section bg-black" id="benefits">
+        <div class="container">
+            <!-- Benefit One Row-->
+            <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                <div class="col-lg-6"><img class="img-fluid" src="img/cleanwater.jpeg" alt="" /></div>
+                <div class="col-lg-6">
+                    <div class="bg-gradient text-center h-100">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-left">
+                                <h4 class="text-white">Clearer, Cleaner Water</h4>
+                                <p class="mb-0 text-white-50" id="benefits">Beaver dams create floodplains which act like water treatment plants, filtering phosphorus, nitrates, and sediment - pollutants which would otherwise wash downstream and eventually cause 'dead zones' in large water bodies. When the wetness of the land is increased, its ability to remove nitrogen increases as well.</p>
+                                <hr class="d-none d-lg-block mb-0 ml-0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Benefit Two Row-->
+            <div class="row justify-content-center no-gutters">
+                <div class="col-lg-6"><img class="img-fluid" src="img/heron.jpeg" alt="" /></div>
+                <div class="col-lg-6 order-lg-first">
+                    <div class="bg-gradient text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-right">
+                                <h4 class="text-white">Biodiversity and Carbon Storage</h4>
+                                <p class="mb-0 text-white-50" id="benefits">Wetter lands also have much greater ability to store carbon, some 20-30 times greater than dry lands. Beaver ponds create habitat for other wildlife as well: Great Blue Heron rookeries, for example, are often found in beaver ponds.</p>
+                                <hr class="d-none d-lg-block mb-0 mr-0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Benefit #3 Row -->
+            <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+              <div class="col-lg-6"><img class="img-fluid" src="img/introaerial.jpg" alt="" /></div>
+              <div class="col-lg-6">
+                  <div class="bg-gradient text-center h-100">
+                      <div class="d-flex h-100">
+                          <div class="project-text w-100 my-auto text-center text-lg-left">
+                              <h4 class="text-white">Improved Water-Holding Capacity</h4>
+                              <p class="mb-0 text-white-50" id="benefits">Ponds created by beaver dams hold large volumes of water, slowing stream flow and spreading water into adjacent land. The result is an overall stabilization of the river to climatic instability, keeping reserves in times of drought and holding water back during flood events.</p>
+                              <hr class="d-none d-lg-block mb-0 ml-0" />
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </section>
+
+    <section class="project-section text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h3 class="mx-auto my-0 text-uppercase">Our Study Area</h3>
+            <p class="text-white-50 mt-4">
+              The Western Lake Superior Watershed spans over 25,000 square kilometers of Northern Wisconsin and Northeastern Minnesota extending up into Ontario, all of which drains into Lake Superior. Wetlands and forests make up around 80% of the total land cover, making the area prime beaver habitat. The map below shows the change in extent from wetlands estimated pre-20th century compared to wetlands today; the amount of wetland area present shows potential for the addition of a huge amount of additional water storage capacity in the landscape. Additionally, as most wetland land use is not utilized for agriculture or development, much of the stream-adjacent land could be flooded without damage to infrastructure or crops.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <div id="firstMap"></div>
+      <br><br>
+    <section class="project-section text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h3 class="mx-auto my-0 text-uppercase">Catchment Exploration Map</h3>
+            <p class="text-white-50 mt-4">
+              The map below portrays estimated beaver population capacity by catchment basin and allows for examination of a variety of environmental factors which may indicate a higher probability of beaver activity. Each of the filters selects those catchment basins at the highest end of the spectrum for that factor; the basins identified with the filters warrant closer examination. To provide further context, public and tribal lands are shown; layers representing impaired streams and topographic wetness are also available. Feel free to toggle layers or change basemaps - can you identify possible beaver dams and ponds in the satellite imagery?
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Button trigger modal -->
+<div align="center">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="data">
+    About the Data
+  </button>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">About the Data</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <h4 class="modal-title">Total River Miles</h4><br>
+        <p>River Miles are calculated by exporting the streams and rivers from the USGS 1:24,000 scale National Hydrography Dataset and summarizing them per basin polygon.</p><hr>
+        <h4 class="modal-title">Land Cover Percentages</h4><br>
+        <p>Percent Wetlands, Forest, and Developed/Agricultural is taken from the National Land Cover Dataset 2019 and processed using desktop GIS. Each land cover type was extracted, zonal statistics summarized, and joined with the catchment basin polygon layer. For each type of land cover, approximately the top 25% of features is selected by the filter button.</p><hr>
+        <h4 class="modal-title">Percent Suitable Vegetation</h4><br>
+        <p>Vegetation type is taken from the USDA/DOI Landfire dataset of Existing Vegetation Type. Each vegetation type is given a score based on its suitability as food and dam-building material for beavers; for example, areas dominated by aspen (a preferred food of beavers) were given the highest score, while areas identified as grasslands or agricultural areas were given a low score. Once the data was joined with the catchment basin layer, the features with the highest percentages of high-scoring vegetation were designated as "beaver-suitable" and made able to be highlighted with the filter.</p><hr>
+        <h4 class="modal-title">Topographic Wetness Index</h4><br>
+        <p>Topographic Wetness Index measures the ability of a location to retain water based on the topography of the landscape. This index starts with a mosaic DEM at 30-meter resolution and uses flow direction, flow accumulation surface, and slope to compute a numeric value grading the ability of the land to retain accumulated water. The TWI is limited in that it is purely elevation-based and the algorithm it is built from is somewhat crude; however, it may prove useful in identifying locations where new wetland ponds could be established.</p><hr>
+        <h4 class="modal-title">Potential Beaver Population</h4><br>
+        <p>Beaver population estimates and recolonization potential are derived from comparing studies measuring unexploited populations in locations with habitat similar to this project's study area. Those studies conclude an average of one beaver colony every 1.07 miles of stream, with an average of 5.4 individuals per colony. To derive the final number displayed in the map, the river miles passing through developed or agricultural land were subtracted from the equation.</p><hr>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <div id="viewDiv">
+        <button class="btn btn-success" id="wetlandFilter">Show high % Wetlands</button>
+        <button class="btn btn-success" id="riverFilter">Show Most River Miles</button>
+        <button class="btn btn-success" id="forestFilter">Show high % Forest</button>
+        <button class="btn btn-success" id="suitableFilter">Show most suitable vegetation</button>
+        <button class="btn btn-light" id="clearBtn">Clear filters</button>
+      </div>
+
+      <br><br>
+      <section class="project-section text-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <h3 class="mx-auto my-0 text-uppercase">Landscape Statistics Dashboard</h3>
+              <p class="text-white-50 mt-4">
+                Landscape statistics may also be explored via this dashboard. This histogram will dynamically update to display percentages of each land cover type in the map viewing area; select a catchment basin feature from the list to zoom the map to that feature.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div align="center">
+        <iframe id="dashboard" width="95%" height="850px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" margin="auto"
+        src="https://uw-mad.maps.arcgis.com/apps/dashboards/1f9b4556b69045b99db222463df630c3"></iframe>
+      </div>
+      
+      <div class="bottom-container">
+        <a class="footer-link" href="https://gkanazawa.github.io/portfolio/">Galen Kanazawa GIS Portfolio</a>
+        <a class="footer-link" href="https://superiorbioconservancy.weebly.com/">Superior Bio-Conservancy</a>
+        <p class="copyright">© 2022 Galen Kanazawa.</p>
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
+    <script src="https://js.arcgis.com/4.23/"></script>
+      <!-- JavaScript Bundle with Popper -->
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="js/init.js"></script>
+
+</body>
+</html>
